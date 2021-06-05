@@ -9,18 +9,23 @@ const Form = () => {
 
   const [type, setType] = useState([]);
 
-  const handleChang = (value) => {
+  const handleChange = (value) => {
     setType(value);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Name</label>
         <input type="text" required></input>
         <label>Preparation Time</label>
         <input type="time" step="2" required></input>
         <label>Type</label>
-        <select onChange={(e) => handleChang(e.target.value)}>
+        <select onChange={(e) => handleChange(e.target.value)}>
           <option disabled selected value>
             select dish
           </option>
