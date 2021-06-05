@@ -9,7 +9,7 @@ const Form = () => {
 
   const [name, setName] = useState("");
   const [preparationTime, setPreparationTime] = useState("");
-  const [type, setType] = useState("");
+  const [type, setType] = useState([]);
   const [pizzaSlices, setPizzaSlices] = useState("");
   const [diameter, setdiameter] = useState("");
   const [spiciness, setSpiciness] = useState("");
@@ -17,7 +17,9 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
+  const handleChange = (value) => {
+    setType(value);
+  };
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -37,7 +39,7 @@ const Form = () => {
           required
         ></input>
         <label>Type</label>
-        <select onChange={(e) => setType(e.target.value)}>
+        <select onChange={(e) => handleChange(e.target.value)}>
           <option defaultValue>select dish</option>
           {dishes.map((dish) => (
             <option key={dish.value} value={type}>
