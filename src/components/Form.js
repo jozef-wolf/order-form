@@ -35,6 +35,9 @@ const Form = () => {
       ),
     },
   ]);
+
+  const [selectedDish, setSelectedDish] = React.useState(dishes[0]);
+
   return (
     <div>
       <form>
