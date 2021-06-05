@@ -8,9 +8,9 @@ const Form = () => {
       field: (
         <div>
           <label htmlFor="pizza">number of slices</label>
-          <input type="number" />
+          <input type="number" required />
           <label htmlFor="pizza">Diameter</label>
-          <input type="number" />
+          <input type="number" required />
         </div>
       ),
     },
@@ -20,7 +20,7 @@ const Form = () => {
       field: (
         <div>
           <label htmlFor="soup">Spiciness scale</label>
-          <input type="range" min="1" max="10" />
+          <input type="range" min="1" max="10" required />
         </div>
       ),
     },
@@ -30,7 +30,7 @@ const Form = () => {
       field: (
         <div>
           <label htmlFor="sandwich">Slices of bread</label>
-          <input type="number" />
+          <input type="number" required />
         </div>
       ),
     },
@@ -55,7 +55,7 @@ const Form = () => {
         <label>Type</label>
         <select onChange={handleDishSelect}>
           {dishes.map((dish) => (
-            <option key={dish.value} value={dish.value}>
+            <option key={dish.value} value={dish.value} required>
               {dish.label}
             </option>
           ))}
