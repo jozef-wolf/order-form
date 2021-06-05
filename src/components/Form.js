@@ -1,66 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Form = () => {
   const [dishes] = React.useState([
-    {
-      label: "Pizza",
-      value: "Pizza",
-      field: (
-        <div>
-          <label htmlFor="pizza">number of slices</label>
-          <input type="number" required />
-          <label htmlFor="pizza">Diameter</label>
-          <input type="number" required />
-        </div>
-      ),
-    },
-    {
-      label: "Soup",
-      value: "Soup",
-      field: (
-        <div>
-          <label htmlFor="soup">Spiciness scale</label>
-          <input type="range" min="1" max="10" required />
-        </div>
-      ),
-    },
-    {
-      label: "Sandwich",
-      value: "Sandwich",
-      field: (
-        <div>
-          <label htmlFor="sandwich">Slices of bread</label>
-          <input type="number" required />
-        </div>
-      ),
-    },
+    { label: "Pizza", value: "Pizza" },
+    { label: "Soup", value: "Soup" },
+    { label: "Sandwich", value: "Sandwich" },
   ]);
 
-  const [selectedDish, setSelectedDish] = React.useState(dishes[0]);
+  const [type, setType] = useState([]);
 
-  const handleDishSelect = (e) => {
-    const dish = dishes.find((dish) => dish.value === e.target.value);
-    if (dish) {
-      setSelectedDish(dish);
-    }
+  const handleChang = (value) => {
+    setType(value);
   };
-
   return (
     <div>
       <form>
         <label>Name</label>
         <input type="text" required></input>
-        <label>Preperation Time</label>
+        <label>Preparation Time</label>
         <input type="time" step="2" required></input>
         <label>Type</label>
-        <select onChange={handleDishSelect}>
+        <select onChange={(e) => handleChang(e.target.value)}>
           {dishes.map((dish) => (
-            <option key={dish.value} value={dish.value} required>
+            <option key={dish.value} value={dish.value}>
               {dish.label}
             </option>
           ))}
         </select>
-        {selectedDish && selectedDish.field}
+        {type === "Pizza" && (
+          <>
+            <label>Number of slices</label>
+            <input type="number" required></input>
+          </>
+        )}
+        {type === "Soup" && (
+          <>
+            <label>Spiciness</label>
+            <input type="number" min="1" max="10" required></input>
+          </>
+        )}
+        {type === "Sandwich" && (
+          <>
+            <label>Slices of bread</label>
+            <input type="number" min="1" required></input>
+          </>
+        )}
         <button>submit</button>
       </form>
     </div>
