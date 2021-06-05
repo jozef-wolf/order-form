@@ -48,19 +48,45 @@ const Form = () => {
         {type === "Pizza" && (
           <>
             <label>Number of slices</label>
-            <input type="number" required></input>
+            <input
+              type="number"
+              value={pizzaSlices}
+              onChange={(e) => setPizzaSlices(e.target.value)}
+              required
+            ></input>
+            <label>Diameter</label>
+            <input
+              type="number"
+              step="0.01"
+              value={diameter}
+              onChange={(e) => setdiameter(e.target.value)}
+              required
+            ></input>
           </>
         )}
         {type === "Soup" && (
           <>
             <label>Spiciness</label>
-            <input type="number" min="1" max="10" required></input>
+            <input
+              type="number"
+              min="1"
+              max="10"
+              value={spiciness}
+              onChange={(e) => setSpiciness(e.target.value)}
+              required
+            ></input>
           </>
         )}
         {type === "Sandwich" && (
           <>
             <label>Slices of bread</label>
-            <input type="number" min="1" required></input>
+            <input
+              type="number"
+              min="1"
+              value={breadSlices}
+              onChange={(e) => setbreadSlices(e.target.value)}
+              required
+            ></input>
           </>
         )}
         <button>submit</button>
