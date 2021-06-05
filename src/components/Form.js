@@ -38,6 +38,13 @@ const Form = () => {
 
   const [selectedDish, setSelectedDish] = React.useState(dishes[0]);
 
+  const handleDishSelect = (e) => {
+    const dish = dishes.find((dish) => dish.value === e.target.value);
+    if (dish) {
+      setSelectedDish(dish);
+    }
+  };
+
   return (
     <div>
       <form>
@@ -46,7 +53,7 @@ const Form = () => {
         <label>Preperation Time</label>
         <input type="time" step="2" required></input>
         <label>Type</label>
-        <select>
+        <select onChange={handleDishSelect}>
           {dishes.map((dish) => (
             <option key={dish.value} value={dish.value}>
               {dish.label}
