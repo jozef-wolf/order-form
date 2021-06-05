@@ -26,9 +26,7 @@ const Form = () => {
         <input type="time" step="2" required></input>
         <label>Type</label>
         <select onChange={(e) => handleChange(e.target.value)}>
-          <option disabled selected value>
-            select dish
-          </option>
+          <option defaultValue>select dish</option>
           {dishes.map((dish) => (
             <option key={dish.value} value={dish.value}>
               {dish.label}
