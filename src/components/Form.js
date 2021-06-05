@@ -5,9 +5,35 @@ const Form = () => {
     {
       label: "Pizza",
       value: "Pizza",
+      field: (
+        <div>
+          <label htmlFor="pizza">number of slices</label>
+          <input type="number" />
+          <label htmlFor="pizza">Diameter</label>
+          <input type="number" />
+        </div>
+      ),
     },
-    { label: "Soup", value: "Soup" },
-    { label: "Sandwich", value: "Sandwich" },
+    {
+      label: "Soup",
+      value: "Soup",
+      field: (
+        <div>
+          <label htmlFor="soup">Spiciness scale</label>
+          <input type="range" min="1" max="10" />
+        </div>
+      ),
+    },
+    {
+      label: "Sandwich",
+      value: "Sandwich",
+      field: (
+        <div>
+          <label htmlFor="sandwich">Slices of bread</label>
+          <input type="number" />
+        </div>
+      ),
+    },
   ]);
   return (
     <div>
@@ -18,9 +44,6 @@ const Form = () => {
         <input type="time" step="2" required></input>
         <label>Type</label>
         <select>
-          <option selected value="select">
-            select
-          </option>
           {dishes.map((dish) => (
             <option key={dish.value} value={dish.value}>
               {dish.label}
