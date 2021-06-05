@@ -7,12 +7,13 @@ const Form = () => {
     { label: "Sandwich", value: "Sandwich" },
   ]);
 
-  const [type, setType] = useState([]);
-
-  const handleChange = (value) => {
-    setType(value);
-  };
-
+  const [name, setName] = useState("");
+  const [preparationTime, setPreparationTime] = useState("");
+  const [type, setType] = useState("");
+  const [pizzaSlices, setPizzaSlices] = useState("");
+  const [diameter, setdiameter] = useState("");
+  const [spiciness, setSpiciness] = useState("");
+  const [breadSlices, setbreadSlices] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -21,14 +22,25 @@ const Form = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>Name</label>
-        <input type="text" required></input>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        ></input>
         <label>Preparation Time</label>
-        <input type="time" step="2" required></input>
+        <input
+          type="time"
+          step="2"
+          value={preparationTime}
+          onChange={(e) => setPreparationTime(e.target.value)}
+          required
+        ></input>
         <label>Type</label>
-        <select onChange={(e) => handleChange(e.target.value)}>
+        <select onChange={(e) => setType(e.target.value)}>
           <option defaultValue>select dish</option>
           {dishes.map((dish) => (
-            <option key={dish.value} value={dish.value}>
+            <option key={dish.value} value={type}>
               {dish.label}
             </option>
           ))}
