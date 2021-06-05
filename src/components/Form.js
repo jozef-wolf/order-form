@@ -60,6 +60,7 @@ const Form = () => {
             </option>
           ))}
         </select>
+        {selectedDish && selectedDish.field}
         <button>submit</button>
       </form>
     </div>
