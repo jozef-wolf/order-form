@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #828282;
+      background-color: #dbdbdb;
       width: 30vw;
       height: 40px;
     }
@@ -42,11 +42,11 @@ const StyledDiv = styled.div`
   }
   button {
     height: 30px;
-    background-color: blue;
+    background-color: black;
     color: white;
-    border: 1px solid blue;
+    border: 1px solid black;
     &:hover {
-      background-color: darkblue;
+      opacity: 75%;
     }
   }
 `;
