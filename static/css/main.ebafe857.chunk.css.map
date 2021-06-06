@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,KACE,QAAS,CACT,iBAAkB,CAClB,mCAAqC,CACrC,kCAAmC,CACnC,iCACF","file":"main.ebafe857.chunk.css","sourcesContent":["body {\n  margin: 0;\n  overflow-x: hidden;\n  font-family: \"Montserrat\", sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"]}
