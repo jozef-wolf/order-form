@@ -9,9 +9,10 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30vw;
+  width: 50vw;
   padding: 10px 0 10px 0;
-  box-shadow: 2px 2px 8px 2px lightgray;
+  margin: 5% 0 10% 0;
+  background-color: white;
   h2 {
     font-size: 2rem;
     letter-spacing: 20px;
@@ -28,8 +29,8 @@ const StyledDiv = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #dbdbdb;
-      width: 30vw;
+      background: #f6f6f6;
+      width: 50vw;
       height: 40px;
     }
     input {
@@ -156,7 +157,7 @@ const Form = () => {
             <label>Diameter</label>
             <input
               type="number"
-              step="0.01"
+              step="0.1"
               value={diameter}
               onChange={(e) => setdiameter(e.target.value)}
               required
