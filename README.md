@@ -7,6 +7,6 @@
 ### I will figure it out after deadline for myself. 
 
 ## Form contains following fields: 
-### Name, preperation time, type. After selecting dish type conditionaly renders other fields.
+### Name, preperation time, type. After selecting dish type, conditionaly renders other fields.
 
 # [Go to order form](https://jozef-wolf.github.io/order-form/)
