@@ -51,7 +51,7 @@ const StyledDiv = styled.div`
       width: 150px;
     }
     select {
-      border: none;
+      border: 1px solid lightgray;
       width: 150px;
       height: 20px;
       margin: 10px;
