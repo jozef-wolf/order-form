@@ -1,25 +1,49 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [dishes] = React.useState([
-    { label: "Pizza", value: "Pizza" },
+  const [items] = React.useState([
+    {
+      label: "Pizza",
+      value: "Pizza",
+    },
     { label: "Soup", value: "Soup" },
     { label: "Sandwich", value: "Sandwich" },
   ]);
 
   const [name, setName] = useState("");
-  const [preparationTime, setPreparationTime] = useState("");
   const [type, setType] = useState([]);
+  const [preparationTime, setPreparationTime] = useState("");
   const [pizzaSlices, setPizzaSlices] = useState("");
   const [diameter, setdiameter] = useState("");
   const [spiciness, setSpiciness] = useState("");
   const [breadSlices, setbreadSlices] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+
   const handleChange = (value) => {
     setType(value);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const dish = {
+      name,
+      type,
+      preparationTime,
+      pizzaSlices,
+      diameter,
+      spiciness,
+      breadSlices,
+    };
+    console.log(dish);
+
+    fetch("https://frosty-wood-6558.getsandbox.com:443/dishes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dish),
+    }).then(() => {
+      console.log("new dish added");
+    });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -41,9 +65,9 @@ const Form = () => {
         <label>Type</label>
         <select onChange={(e) => handleChange(e.target.value)}>
           <option defaultValue>select dish</option>
-          {dishes.map((dish) => (
-            <option key={dish.value} value={type}>
-              {dish.label}
+          {items.map((item) => (
+            <option key={item.value} value={item.value}>
+              {item.label}
             </option>
           ))}
         </select>
@@ -91,6 +115,7 @@ const Form = () => {
             ></input>
           </>
         )}
+
         <button>submit</button>
       </form>
     </div>
