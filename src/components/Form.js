@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import pizza from "./imgs/pizza.jpg";
+import soup from "./imgs/soup.jpg";
+import sandwich from "./imgs/sandwich.jpg";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -10,8 +13,11 @@ const StyledDiv = styled.div`
   padding: 10px 0 10px 0;
   box-shadow: 2px 2px 8px 2px lightgray;
   h2 {
-    font-size: 3rem;
-    letter-spacing: 10px;
+    font-size: 2rem;
+    letter-spacing: 20px;
+  }
+  img {
+    width: 100%;
   }
   form {
     display: flex;
@@ -97,7 +103,22 @@ const Form = () => {
 
   return (
     <StyledDiv>
-      <h2>FORM</h2>
+      <h2>Dish</h2>
+      {type === "Pizza" && (
+        <>
+          <img src={pizza} alt=""></img>
+        </>
+      )}
+      {type === "Soup" && (
+        <>
+          <img src={soup} alt=""></img>
+        </>
+      )}
+      {type === "Sandwich" && (
+        <>
+          <img src={sandwich} alt=""></img>
+        </>
+      )}
       <form onSubmit={handleSubmit}>
         <label>Name</label>
         <input
