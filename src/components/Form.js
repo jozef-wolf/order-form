@@ -13,12 +13,19 @@ const StyledDiv = styled.div`
   padding: 10px 0 10px 0;
   margin: 5% 0 10% 0;
   background-color: white;
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
   h2 {
     font-size: 2rem;
     letter-spacing: 20px;
   }
   img {
     width: 100%;
+    @media (max-width: 768px) {
+      width: 100vw;
+      height: auto;
+    }
   }
   form {
     display: flex;
@@ -32,6 +39,9 @@ const StyledDiv = styled.div`
       background: #f6f6f6;
       width: 50vw;
       height: 40px;
+      @media (max-width: 768px) {
+        width: 100vw;
+      }
     }
     input {
       text-align: left;
